@@ -1,14 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import { useCookies } from "react-cookie";
 
-const reportByMonth = (props) => {
+const ReportByMonth = (props) => {
+  const [cookies, setCookie] = useCookies(["session"]);
 
-    return (<div>My token is {props.token}</div>)
+  return `My token is ${cookies.access_token}`;
+};
 
-}
+ReportByMonth.propTypes = {
+  token: PropTypes.string,
+};
 
-reportByMonth.propTypes = {
-    token: PropTypes.string
-}
-
-export default reportByMonth;
+export default ReportByMonth;

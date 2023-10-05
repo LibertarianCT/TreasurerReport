@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import AuthProvider from './authProvider';
+import React from 'react';
 import ReportByMonth from './reportByMonth';
+import { CookiesProvider } from 'react-cookie';
 
 import './App.css';
 
@@ -8,12 +8,10 @@ require('dotenv').config();
 
 const App = () => {
 
-  const [token, setToken] = useState('');
-
   return (
-    <AuthProvider token={token} setToken={setToken}>
-      <ReportByMonth token={token} />
-    </AuthProvider>
+    <CookiesProvider>
+      <ReportByMonth />
+    </CookiesProvider>
   );
 }
 

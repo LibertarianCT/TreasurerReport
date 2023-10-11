@@ -1,18 +1,17 @@
-import React from 'react';
-import ReportByMonth from './reportByMonth';
-import { CookiesProvider } from 'react-cookie';
+import React from "react";
+import ReportByMonth from "./reportByMonth";
+import AuthProvider from "./authProvider";
 
-import './App.css';
+import "./App.css";
 
-require('dotenv').config();
+require("dotenv").config();
 
 const App = () => {
-
   return (
-    <CookiesProvider>
+    <AuthProvider>
       <ReportByMonth />
-    </CookiesProvider>
+    </AuthProvider>
   );
-}
+};
 
 export default App;
